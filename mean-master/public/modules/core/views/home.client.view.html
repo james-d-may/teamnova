@@ -1,6 +1,110 @@
-<section class="container" data-ng-controller="HomeController">
+<section class="container-fluid" data-ng-controller="HomeController"  ng-init="menus = [{
+	name: 'Default',
+	created: '637263872163',
+	user: {
+		displayName: 'Taimur',
+		phonenumber: 'hjdhsjkdahjks'
+	},
+	submenus: {
+		'1': {
+			text: 'Press one to call 911',
+			action: 'submenu',
+			submenu: {
+				'-1': {
+					action: 'redirect',
+					phonenumber: '911'
+				}
+			}
+		},
+		'2': {
+			text: 'Press two to leave a voice message',
+			action: 'voicemail'
+		}
+	}
+},{
+	name: 'Default2',
+	created: '637263872163',
+	user: {
+		displayName: 'Taimur',
+		phonenumber: 'hjdhsjkdahjks'
+	},
+	submenus: {
+		'1': {
+			text: 'Press one to call 911',
+			action: 'submenu',
+			submenu: {
+				'-1': {
+					action: 'redirect',
+					phonenumber: '911'
+				}
+			}
+		},
+		'2': {
+			text: 'Press two to leave a voice message',
+			action: 'voicemail'
+		}
+	}
+}]">
+<br><br><br>
+
+<div class="container">
+<div id="sidebar-wrapper" class="sidebar-toggle">
+	<ul class="sidebar-nav">
+    	<li ng-repeat="menu in menus">
+      		<a href="#item1">{{menu.name}}</a>
+      	</li>
+  	</ul>
+</div>
+</div>
 
 <div class="row">
-<h1>Your Menu</h1>
+
+<div class="col-md-2"></div>
+
+<div class="col-md-8">
+
+<br>
+
+<div class="row headings">
+
+	<div class="col-md-1">#</div>
+
+	<div class="col-md-7">Option Text</div>
+
+	<div class="col-md-4">Action</div>
+
+</div>
+
+<br>
+
+<div ng-repeat="menu in menus" class="row option">
+	
+	<div class="col-md-1 number option-column">
+
+	</div>
+
+	<div class="col-md-7 text option-column">
+
+		<input type="text" value="{{option.text}}" class="form-control2">
+
+	</div>
+
+	<div class="col-md-4 action option-column">
+
+		<select class="form-control2">
+
+		  <option>Redirect</option>
+
+		  <option>Menu</option>
+
+		</select>
+
+	</div>
+
+</div>
+
+</div>
+
+<div class="col-md-2"></div>
 
 </section>
