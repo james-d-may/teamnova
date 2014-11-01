@@ -4,6 +4,9 @@
 <head>
 	<title>{{title}}</title>
 
+	<!-- CSS -->
+	<link href='http://fonts.googleapis.com/css?family=Fira+Sans:400,500' rel='stylesheet' type='text/css'>
+
 	<!-- General META -->
 	<meta charset="utf-8">
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
@@ -45,9 +48,9 @@
 </head>
 
 <body class="ng-cloak">
-	<header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
+	<header ng-hide="authentication.user" data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
 	<section class="content">
-		<section class="container">
+		<section class="container-fluid">
 			{% block content %}{% endblock %}
 		</section>
 	</section>

@@ -4,6 +4,16 @@
 	}
 }
 
+h3 {
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 500;
+	font-size: 1.6em;
+	-webkit-font-smoothing: antialiased;
+	margin-top: 40px;
+	color: rgb(66,66,66);
+	letter-spacing: -1px;
+}
+
 .remove-account-container {
 	display: inline-block;
 	position: relative;
@@ -13,4 +23,50 @@
 	top: 10px;
 	right: 10px;
 	position: absolute;
+}
+
+.nogutter {
+	padding: 0;
+	margin: 0;
+}
+
+.header {
+	background: url('../../users/img/headerbg.jpg');
+	height: 250px;
+	background-position: 40% 40%;
+	padding-top: 70px;
+}
+
+.logobanner {
+	border-top: 100px solid #e33b43;
+	border-right: 75px solid transparent;
+	height: 0;
+	margin: 0;
+}
+
+.form {
+	background: rgb(230,230,230);
+	height: auto;
+	min-height: 550px;
+	border-top: 1px solid rgb(180,180,180);
+}
+
+.title {
+	padding-top: 25px;
+	letter-spacing: -1px;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 3.2em;
+	font-weight: 500;
+	padding-left: 0;
+	color: rgb(45,45,45);
+}
+
+.footer {
+	background: #1f2126;
+	height: 50px;
+	color: rgba(255,255,255,0.8);
+	padding-top: 17px;
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
 }
