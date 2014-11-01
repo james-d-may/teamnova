@@ -3,18 +3,15 @@
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 
-    include 'variables.php';
+    // include 'variables.php';
 
-    // if the caller pressed anything but 1 send them back
-    if($_REQUEST['Digits'] != '1'and $_REQUEST['Digits'] != '2' and $_REQUEST['Digits'] != '3' and $_REQUEST['Digits'] != '4') {
-        header("Location: twilioPA.php");
-        die;
-    }
+    // // if the caller pressed anything but 1 send them back
+    // if($_REQUEST['Digits'] != '1'and $_REQUEST['Digits'] != '2' and $_REQUEST['Digits'] != '3' and $_REQUEST['Digits'] != '4') {
+    //     header("Location: twilioPA.php");
+    //     die;
+    // }
      
-    // the user pressed 1, connect the call to Twilio department
-    // the user pressed 2, connect the call to Haskell department
-    // the user pressed 3, connect the call to Tetris department
-    // the user pressed 4, connect the call to Boffins department
+    // the user pressed a key, query for the type of action
 
 ?>
 <Response>
