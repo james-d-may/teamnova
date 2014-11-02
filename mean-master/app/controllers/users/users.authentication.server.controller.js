@@ -10,8 +10,9 @@ var _ = require('lodash'),
 	User = mongoose.model('User');
 
 exports.getYo = function(req, res) {
+	console.log('yo from: ' + req.query.username);
 	User.findOne({yoname: req.query.username}, function(err, user) {
-		if (err) {
+		if (err || !user) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
