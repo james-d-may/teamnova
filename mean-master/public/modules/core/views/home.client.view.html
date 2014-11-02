@@ -21,7 +21,7 @@
 
 <h1>Customise Menu</h1><hr>
 
-	<div ng-repeat="option in menu.options">
+	<div id="editables" ng-repeat="option in menu.options">
 
 			<accordion close-others="oneAtATime">
 			<accordion-group>
@@ -70,6 +70,8 @@
 		    </accordion-group>
 		    </accordion>
 	</div>
+
+	<button ng-click="update()">SAVE</button>
 
 </div>
 

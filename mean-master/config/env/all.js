@@ -25,7 +25,8 @@ module.exports = {
 				'public/lib/angular-ui-router/release/angular-ui-router.js',
 				'public/lib/angular-ui-utils/ui-utils.js',
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
-				'public/lib/angular-xeditable/dist/js/xeditable.js'
+				'public/lib/angular-xeditable/dist/js/xeditable.js',
+				'public/lib/jquery/dist/jquery.js'
 			]
 		},
 		css: [

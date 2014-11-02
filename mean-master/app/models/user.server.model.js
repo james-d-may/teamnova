@@ -42,6 +42,14 @@ var UserSchema = new Schema({
 		type: String,
 		trim: true
 	},
+  	isActive: {
+    	type: Boolean,
+    	default: true
+  	},
+  	activeMenu: {},
+  	busyMenu: {},
+
+  	
 	password: {
 		type: String,
 		default: '',

@@ -10,6 +10,10 @@ angular.module(ApplicationConfiguration.applicationModuleName).config(['$locatio
 	}
 ]);
 
+/*angular.module(ApplicationConfiguration.applicationModuleName).run(['editableOptions', function(editableOptions) {
+	editableOptions.blur = 'ignore';
+}]);*/
+
 //Then define the init function for starting up the application
 angular.element(document).ready(function() {
 	//Fixing facebook bug with redirect

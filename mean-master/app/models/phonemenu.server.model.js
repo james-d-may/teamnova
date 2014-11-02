@@ -24,7 +24,12 @@ var PhonemenuSchema = new Schema({
 		type: Schema.ObjectId,
 		ref: 'User'
 	},
-	submenus: {}
+	isActive: {
+    	type: Boolean,
+    	default: true
+  	},
+  	activeMenu: {},
+  	busyMenu: {}
 });
 /*
 SAMPLE:
@@ -53,5 +58,4 @@ SAMPLE:
 	}
 }
 */
-
 mongoose.model('Phonemenu', PhonemenuSchema);
