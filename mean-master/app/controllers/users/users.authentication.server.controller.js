@@ -9,6 +9,10 @@ var _ = require('lodash'),
 	passport = require('passport'),
 	User = mongoose.model('User');
 
+exports.getYo = function(req, res) {
+	console.log('YO from ' + req.query.username);
+};
+
 /**
  * Signup
  */
