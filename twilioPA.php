@@ -32,7 +32,7 @@
 ?>
 <Response>
     <Say>Hello you've reached <?php echo $companyname ?>.</Say>
-    <Gather numDigits="1" action="handleKey.php" method="POST">
+    <Gather numDigits="1" action="test.php" method="POST">
         <?php $i = 0; ?>
 
         <?php while ($choices[$i] != NULL) { ?>
