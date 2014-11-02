@@ -3,23 +3,19 @@
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 
-    // include 'variables.php';
-
     // Query database to get account info and top tier options
-    $m = new MongoClient();
-    $db = $m -> selectDB("manchester");
+    // $m = new MongoClient();
+    // $db = $m -> selectDB("manchester");
 
-    
-
-    $companyname = "e";
+    $companyname = "team nova";
 
     // Company Email to send recording to
-    $companyemail = "";
+    $companyemail = "may.d.james@gmail.com";
 
     // Set words for choices
-    $choice1 = "punch a cat";
-    $choice2 = "saw a banana";
-    $choice3 = "e";
+    $choice1 = "Speak to Taimur.";
+    $choice2 = "Just leave a message.";
+    $choice3 = "Hear more about who we are";
     $choice4 = "";
     $choice5 = "";
     $choice6 = "";
