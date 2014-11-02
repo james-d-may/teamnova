@@ -24,27 +24,31 @@
 
 <h3>Set up your organisation:</h3>
 
-<form role="form">
+<form role="form" ng-submit="signup()">
 
   <div class="form-group">
 
-    <input type="text" class="form-control" id="orgname" placeholder="Organisation Name">
+    <input type="text" class="form-control" id="orgname" data-ng-model="credentials.orgname" placeholder="Organisation Name">
 
     <div class="row">
 
 	    <div class="col-md-6">
 	    	
-	    	<input type="email" class="form-control" id="Email" placeholder="Email">
+	    	<input type="email" class="form-control" id="username" data-ng-model="credentials.username" placeholder="Email">
 
 	    </div>
 
 	    <div class="col-md-6">
 
-	    	<input type="text" class="form-control" id="Email" placeholder="Something">
+	    	<input type="password" class="form-control" id="password" data-ng-model="credentials.password" placeholder="Password">
 
 	    </div>
 
     </div>
+
+    <div data-ng-show="error" class="text-center text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
 
   </div>
 

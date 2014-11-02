@@ -25,23 +25,13 @@ var validateLocalStrategyPassword = function(password) {
  * User Schema
  */
 var UserSchema = new Schema({
-	firstName: {
+	orgname: {
 		type: String,
 		trim: true,
 		default: '',
-		validate: [validateLocalStrategyProperty, 'Please fill in your first name']
+		validate: [validateLocalStrategyProperty, 'Please fill in your organisation name']
 	},
-	lastName: {
-		type: String,
-		trim: true,
-		default: '',
-		validate: [validateLocalStrategyProperty, 'Please fill in your last name']
-	},
-	displayName: {
-		type: String,
-		trim: true
-	},
-	email: {
+	username: {
 		type: String,
 		trim: true,
 		default: '',
@@ -50,12 +40,6 @@ var UserSchema = new Schema({
 	},
 	phonenumber: {
 		type: String,
-		trim: true
-	},
-	username: {
-		type: String,
-		unique: 'testing error message',
-		required: 'Please fill in a username',
 		trim: true
 	},
 	password: {
