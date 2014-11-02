@@ -22,8 +22,14 @@ body {}
 .navbar-header {
 	height: 100px;
 	padding-top: 23px;
-	padding-left: 60px;
+	padding-left: 40px;
 	border: 0 !important;
+}
+
+p {
+	font-family: 'Oxygen', sans-serif;
+	margin-bottom: 15px;
+	line-height: 200%;
 }
 
 .navbar-brand {
@@ -222,6 +228,8 @@ h1 {
   line-height: 50px;
   color: rgba(255,255,255,0.6);
   margin-top: 15px;
+  border-top: 1px solid rgb(200,200,200);
+  border-bottom: 1px solid rgb(200,200,200);
 }
 .sidebar-nav li a {
   color: rgb(120,120,120);
@@ -235,6 +243,7 @@ h1 {
   background: rgba(255,255,255,1);
   color: rgb(120,120,120);
   text-decoration: none;
+  border-right: 1px solid rgb(200,200,200);
 }
 .sidebar-nav li a:active, .sidebar-nav li a:focus {
   text-decoration: none;
@@ -248,6 +257,35 @@ h1 {
     transition: 0s;
     left: 200px;
   }
+}
+
+.toggle-switch .switch-left {
+	background: #3498db;
+	padding-top: 13px;
+	font-family: 'Oxygen', sans-serif;
+	height: 50px;
+	color: white;
+	font-size: 1.2em;
+	-webkit-font-smoothing: antialiased;
+}
+
+.toggle-switch .switch-right {
+	background: #d32b33;
+	padding-top: 13px;
+	font-family: 'Oxygen', sans-serif;
+	height: 50px;
+	color: white;
+	font-size: 1.2em;
+	-webkit-font-smoothing: antialiased;
+}
+
+.ng-valid.ng-dirty {
+	border: 1px solid rgb(200,200,200);
+}
+
+.toggle-switch {
+	width: 200px;
+	height: 50px;
 }
 
 .status {
