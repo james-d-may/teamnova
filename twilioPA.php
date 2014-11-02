@@ -37,8 +37,8 @@
     <Gather numDigits="1" action="handleKey.php" method="POST">
         <?php $i = 0; ?>
 
-        <?php while ($choices[$i] != NULL) { ?>
-            <Say>Press <?php echo ($i+1) ?> to <?php echo $choices[$i] ?>.</Say>
-        <?php $i++;} ?> 
+        <?php while($i<$nochoices) { ?>
+            <Say>Press <?php echo ($i+1) ?> to <?php echo $currentActivity[$i]["text"]?>.</Say>
+        <?php $i++;} ?>
     </Gather>
 </Response>
