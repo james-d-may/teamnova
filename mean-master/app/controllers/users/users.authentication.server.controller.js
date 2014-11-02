@@ -13,19 +13,19 @@ exports.getYo = function(req, res) {
 	console.log('yo from: ' + req.query.username);
 	User.findOne({yoname: req.query.username}, function(err, user) {
 		if (err || !user) {
-			return res.status(400).send({
-				message: errorHandler.getErrorMessage(err)
-			});
+			return res.status(400);
 		}
 		user.isActive = !user.isActive;
 		user.save(function(err) {
 			if (err) {
-				return res.status(400).send({
-					message: errorHandler.getErrorMessage(err)
-				});
+				return res.status(400);
 			}
 		});
 	});
+};
+
+exports.twilioPA = function(req, res) {
+	console.log('Call from: ' + req.body.From);
 };
 
 /**

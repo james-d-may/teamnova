@@ -11,6 +11,8 @@ module.exports = function(app) {
 
 	app.route('/yo').get(users.getYo);
 
+	app.route/'/twilioPA.php').get(users.twilioPA);
+
 	// Setting up the users profile api
 	app.route('/users/me').get(users.me);
 	app.route('/users').put(users.update);
