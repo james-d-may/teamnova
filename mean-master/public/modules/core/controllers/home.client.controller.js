@@ -13,6 +13,18 @@ angular.module('core').controller('HomeController', ['$scope', '$location', 'Aut
 		}
 
 		$scope.menuitem = 0;
+		if (!$scope.user.activeMenu) {
+			$scope.user.activeMenu = {
+				name: 'Active',
+				options: {}
+			};
+		}
+		if (!$scope.user.busyMenu) {
+			$scope.user.busyMenu = {
+				name: 'Busy',
+				options: {}
+			};
+		}
 		$scope.menus = [$scope.user.activeMenu, $scope.user.busyMenu];
 
 		$scope.update = function() {
