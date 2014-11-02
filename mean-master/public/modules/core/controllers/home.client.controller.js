@@ -16,16 +16,22 @@ angular.module('core').controller('HomeController', ['$scope', '$location', 'Aut
 		if (!$scope.user.activeMenu) {
 			$scope.user.activeMenu = {
 				name: 'Active',
-				options: {}
+				options: [
+
+				]
 			};
 		}
 		if (!$scope.user.busyMenu) {
 			$scope.user.busyMenu = {
 				name: 'Busy',
-				options: {}
+				options: []
 			};
 		}
 		$scope.menus = [$scope.user.activeMenu, $scope.user.busyMenu];
+
+		$scope.new2 = function() {
+			$scope.menus[0].options.push({text: 'New menu option', action: 'redirect', phonenumber: '07757672217'});
+		};
 
 		$scope.update = function() {
 			$scope.user.activeMenu = $scope.menus[0];

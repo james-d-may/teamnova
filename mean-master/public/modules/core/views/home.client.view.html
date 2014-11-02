@@ -1,5 +1,7 @@
 <section class="container-fluid" data-ng-controller="HomeController">
 
+<br><br><br><br><br><br>
+
 <div class="container">
 <div id="sidebar-wrapper" class="sidebar-toggle">
 
@@ -47,6 +49,8 @@
 			  </a>
 			</span><br><br>
 
+			<span>Name: {{suboption.phonenumber}}</span>
+
 			<span ng-show="option.action == 'redirect'">Phone Number: <span editable-text="option.phonenumber">{{option.phonenumber}}</span></span>
 
 			<span ng-show="option.action == 'text'">Text: <span editable-text="option.text">{{option.text}}</span></span>
@@ -58,10 +62,10 @@
 			      <span class="index">{{$index+1}}.</span><span editable-text="suboption.text">{{suboption.text}}</span><br>
 
 			      Action: <span ng-controller="SelectLocalCtrl"><a href="#" editable-select="suboption.action" e-ng-options="t.value as t.text for t in statuses">
-				    {{ suboption.action }}</a></span><br>
+				    {{ suboption.action }}</a></span><br><br>
 				  <span ng-show="suboption.action == 'redirect'">Phone Number: <span editable-text="suboption.phonenumber">{{suboption.phonenumber}}</span></span>
 
-					<span ng-show="suboption.action == 'text'">Text: <span editable-text="suboption.text">{{suboption.text}}</span></span><br><br>
+					<span>Name: <span ng-controller="$index+1}}" editable-text="suboption.text">{{suboption.text}}</span></span>
 
 			    </div>
 
@@ -72,6 +76,8 @@
 	</div>
 
 	<button ng-click="update()">SAVE</button>
+
+	<button ng-click="new2()">NEW</button>
 
 </div>
 
