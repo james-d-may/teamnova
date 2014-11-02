@@ -17,7 +17,7 @@
     // Functions for different actions
     // Text Function
     function text($message) {
-        echo "<Say >$message</Say>";
+        echo "<Say>$message</Say>";
     }
 
     // Redirect Function
@@ -29,7 +29,7 @@
     // Voicemail Function
     function voicemail() {
         echo '<Say>Please leave a 10 second message.</Say>';
-        echo '<Record maxLength="5" action="mailto.php" />';
+        echo '<Record maxLength="10" action="mailto.php" />';
     }
 
     // If available or busy sub menu Function
@@ -98,7 +98,7 @@
 
         <!-- Query to see what form choice 1 is and collect associated varibales --> 
 
-        <?php text("hello1") ?>
+        <?php redirect("07757672217") ?>
 
     <?php } elseif ($_REQUEST['Digits'] == '2') { ?>
 
@@ -110,13 +110,13 @@
 
         <!-- Query to see what form choice 3 is and collect associated varibales -->
 
-        <?php redirect("07757672217") ?>
+        <?php text("We're creating an advanced voicemail which you can customise, through a simple web interface. It's going to be awesome so keep an eye out for it.") ?>
 
     <?php } elseif ($_REQUEST['Digits'] == '4') { ?>
 
         <!-- Query to see what form choice 4 is and collect associated varibales -->
 
-        <?php text("hello4") ?>
+        <?php ifaorb(FALSE,"redirect","voicemail","07757672217",NULL) ?>
 
     <?php } ?>
 </Response>
