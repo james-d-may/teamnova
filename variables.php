@@ -10,11 +10,14 @@
     $companyemail = $obj["username"];
 
     //No of top tier choices
-    $nochoices = if ($isActive)
+    $nochoices = 0;
+
+
+    if ($isActive)
     {
-      sizeof($activeActivity);
+      $nochoices = sizeof($activeActivity);
     } else {
-      sizeof($busyActivity);
+      $ nochoices = sizeof($busyActivity);
     }
 
     $activeActivity = $obj["activeMenu"]["options"];
