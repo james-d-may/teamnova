@@ -70,3 +70,33 @@ h3 {
 	font-weight: 300;
 	-webkit-font-smoothing: antialiased;
 }
+
+.panel-heading {
+	padding: 17px;
+	padding-left: 20px;
+	font-family: 'Fira Sans', sans-serif !important;
+	-webkit-font-smoothing: antialiased;
+}
+
+.panel-heading:hover {
+	background: rgb(215,215,215) !important;
+}
+
+.panel-body {
+	border: 0;
+	box-shadow: 0 !important;
+}
+
+.panel-group .panel {
+	box-shadow: 0 !important;
+	border-radius: 0;
+}
+
+.panel-heading {
+	box-shadow: 0 !important;
+	border-left: 1px solid rgb(230,230,230);
+	border-right: 1px solid rgb(230,230,230);
+	cursor: pointer;
+	border-radius: 0;
+	background: rgb(230,230,230) !important;
+}
