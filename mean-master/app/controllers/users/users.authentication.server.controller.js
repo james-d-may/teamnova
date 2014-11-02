@@ -10,7 +10,21 @@ var _ = require('lodash'),
 	User = mongoose.model('User');
 
 exports.getYo = function(req, res) {
-	console.log('YO from ' + req.query.username);
+	User.findOne({yoname: req.query.username}, function(err, user) {
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		}
+		user.isActive = !user.isActive;
+		user.save(function(err) {
+			if (err) {
+				return res.status(400).send({
+					message: errorHandler.getErrorMessage(err)
+				});
+			}
+		});
+	});
 };
 
 /**
