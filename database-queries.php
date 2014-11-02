@@ -1,6 +1,6 @@
 <?php
   $m = new MongoClient();
-  $db = $m -> selectDB("");
+  $db = $m -> selectDB("mongodb://<dbuser>:<dbpassword>@ds049170.mongolab.com:49170/manchester");
 
   function getCompanyName($phonenumber)
   {
