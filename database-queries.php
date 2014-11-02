@@ -15,7 +15,7 @@
 
   function getChoices($phonenumber)
   {
-    $user_c = $db -> 'Users';
+    $user_c = $db -> 'users';
     $user = $user_c -> findOne(array(
       'phonenumber' => $phonenumber,
     ));
@@ -28,3 +28,5 @@
      }
    }
 ?>
+
+<p> <?php getCompanyName("01566232012") ?> </p>
