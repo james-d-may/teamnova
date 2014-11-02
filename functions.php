@@ -18,45 +18,6 @@
         echo '<Record maxLength="10" action="mailto.php" />';
     }
 
-    // If available or busy sub menu Function
-    function ifaorb($available,$formatA,$formatB,$pnumber,$message) {
-        if ($available) {
-
-            switch ($formatA) {
-            case "redirect":
-            redirect($pnumber);
-            break;
-            case "voicemail":
-            echo '<Say> Sorry they cant take your call at present. Alternatively.</Say>';
-            voicemail();
-            break;
-            case "text":
-            text($message);
-            break;
-            default:
-            echo "Sorry we failed to connect you.";
-            }
-
-        } else {
-
-            switch ($formatB) {
-            case "redirect":
-            redirect($pnumber);
-            break;
-            case "voicemail":
-            echo '<Say> Sorry they cant take your call at present. Alternatively.</Say>';
-            voicemail();
-            break;
-            case "text":
-            text($message);
-            break;
-            default:
-            echo "Sorry we failed to connect you.";
-            }
-        }
-
-    }
-
     function subMenu($choiceA,$choiceB,$choiceC,$choiceD) {
 
         // Create subchoice array
