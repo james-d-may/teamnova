@@ -1,107 +1,81 @@
-<section class="container-fluid" data-ng-controller="HomeController"  ng-init="menus = [{
-	name: 'Default',
-	created: '637263872163',
-	user: {
-		displayName: 'Taimur',
-		phonenumber: 'hjdhsjkdahjks'
-	},
-	submenus: {
-		'1': {
-			text: 'Press one to call 911',
-			action: 'submenu',
-			submenu: {
-				'-1': {
-					action: 'redirect',
-					phonenumber: '911'
-				}
-			}
-		},
-		'2': {
-			text: 'Press two to leave a voice message',
-			action: 'voicemail'
-		}
-	}
-},{
-	name: 'Default2',
-	created: '637263872163',
-	user: {
-		displayName: 'Taimur',
-		phonenumber: 'hjdhsjkdahjks'
-	},
-	submenus: {
-		'1': {
-			text: 'Press one to call 911',
-			action: 'submenu',
-			submenu: {
-				'-1': {
-					action: 'redirect',
-					phonenumber: '911'
-				}
-			}
-		},
-		'2': {
-			text: 'Press two to leave a voice message',
-			action: 'voicemail'
-		}
-	}
-}]">
+<section class="container-fluid" data-ng-controller="HomeController">
+
 <br><br><br>
 
 <div class="container">
 <div id="sidebar-wrapper" class="sidebar-toggle">
 	<ul class="sidebar-nav">
-    	<li ng-repeat="menu in menus">
-      		<a href="#item1">{{menu.name}}</a>
+    	<li ng-repeat="menu in menus" ng-class="menu.active" class="sidebaritem">
+      		<a href="" ng-click="showmenu($index)">{{menu.name}}</a>
       	</li>
   	</ul>
 </div>
 </div>
 
+<br>
+
+<div ng-repeat="menu in menus" ng-hide="$index != menuitem">
+
 <div class="row">
 
-<div class="col-md-2"></div>
+<div class="col-md-6 col-md-offset-2">
 
-<div class="col-md-8">
+	<div ng-repeat="option in menu.options">
 
-<br>
+			<accordion close-others="oneAtATime">
+			<accordion-group>
+			<accordion-heading editable-text="option.text">
 
-<div class="row headings">
+			<span class="index">{{$index +1}}.</span>{{option.text}}
 
-	<div class="col-md-1">#</div>
+			<span class="pull-right">
 
-	<div class="col-md-7">Option Text</div>
+				<span ng-show="option.action == 'redirect'" class="glyphicon glyphicon-earphone"></span>
+				<span ng-show="option.action == 'submenu'" class="glyphicon glyphicon-list"></span>
+				<span ng-show="option.action == 'voicemail'" class="glyphicon glyphicon-volume-up"></span>
+				<span ng-show="option.action == 'text'" class="glyphicon glyphicon-font"></span>
 
-	<div class="col-md-4">Action</div>
+			</span>
+
+			</accordion-heading>
+			Action: 
+
+			<span ng-controller="SelectLocalCtrl">
+			  <a href="#" editable-select="option.action" e-ng-options="s.value as s.text for s in statuses">
+			    {{ option.action }}
+			  </a>
+			</span><br><br>
+
+			<span ng-show="option.action == 'redirect'">Phone Number: <span editable-text="option.phonenumber">{{option.phonenumber}}</span></span>
+
+			<span ng-show="option.action == 'text'">Text: <span editable-text="option.text">{{option.text}}</span></span>
+
+			<span ng-show="option.action == 'submenu'">
+
+				<div ng-repeat="suboption in option.options">
+
+			      <span class="index">{{$index+1}}.</span><span editable-text="suboption.text">{{suboption.text}}</span><br>
+
+			      Action: <span ng-controller="SelectLocalCtrl"><a href="#" editable-select="suboption.action" e-ng-options="t.value as t.text for t in statuses">
+				    {{ suboption.action }}</a></span><br>
+				  <span ng-show="suboption.action == 'redirect'">Phone Number: <span editable-text="suboption.phonenumber">{{suboption.phonenumber}}</span></span>
+
+					<span ng-show="suboption.action == 'text'">Text: <span editable-text="suboption.text">{{suboption.text}}</span></span><br><br>
+
+			    </div>
+
+		    </span>
+
+		    </accordion-group>
+		    </accordion>
+	</div>
 
 </div>
 
-<br>
-
-<div ng-repeat="menu in menus" class="row option">
-	
-	<div class="col-md-1 number option-column">
-
-	</div>
-
-	<div class="col-md-7 text option-column">
-
-		<input type="text" value="{{option.text}}" class="form-control2">
-
-	</div>
-
-	<div class="col-md-4 action option-column">
-
-		<select class="form-control2">
-
-		  <option>Redirect</option>
-
-		  <option>Menu</option>
-
-		</select>
-
-	</div>
+</div>
 
 </div>
+
 
 </div>
 

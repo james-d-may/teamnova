@@ -134,10 +134,20 @@ h1 {
 	margin-left: 0;
 }
 
+.sidebaritem {
+	text-align: center;
+	text-transform: uppercase;
+	color: rgba(255,255,255,0.7) !important;
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 400;
+	padding-left: 0;
+	margin-left: 0;
+}
+
 #sidebar-wrapper {
   top: 50px;
   left: -200px;
-  width: 200px;
+  width: 220px;
   background-color: #191b1f;
   color: white;
   position: fixed;
@@ -149,12 +159,14 @@ h1 {
   top: 0;
   margin: 0;
   padding: 0;
-  width: 250px;
+  width: 220px;
   list-style: none;
 }
 .sidebar-nav li {
-  text-indent: 20px;
+  text-indent: 0px;
   line-height: 50px;
+  color: rgba(255,255,255,0.6);
+  border-bottom: 1px solid rgba(0,0,0,0.3);
 }
 .sidebar-nav li a {
   color: white;
@@ -162,7 +174,7 @@ h1 {
   text-decoration: none;
 }
 .sidebar-nav li a:hover {
-  background: rgba(255,255,255,0.25);
+  background: rgba(0,0,0,0.1);
   color: white;
   text-decoration: none;
 }
@@ -185,3 +197,42 @@ h1 {
 	border-bottom: none;
 	color: white;
 }
+
+.active {
+	background: red;
+}
+
+
+.panel-heading {
+	background: rgb(230,230,230) !important;
+	padding: 17px;
+	padding-left: 20px;
+	font-family: 'Fira Sans', sans-serif !important;
+	-webkit-font-smoothing: antialiased;
+}
+
+.index {
+	margin-right: 20px;
+}
+
+.panel-heading:hover {
+	background: rgb(215,215,215) !important;
+}
+
+.panel-body {
+	border: 0;
+	box-shadow: 0 !important;
+	font-family: 'Fira Sans', sans-serif;
+}
+
+.panel-group .panel {
+	box-shadow: 0 !important;
+	border-radius: 0;
+}
+
+.panel-heading {
+	box-shadow: 0 !important;
+	border: 0 !important;
+	cursor: pointer;
+	border-radius: 0;
+
