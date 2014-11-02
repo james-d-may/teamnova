@@ -28,7 +28,7 @@ exports.twilio = function(req, res) {
 	var num = req.query.number;
 	User.findOne({phonenumber: num}, function(err, user) {
 		if (err || !user) {
-			res.send({error: true});
+			return res.send({error: true});
 		}
 		user.password = undefined;
 		user.salt = undefined;
