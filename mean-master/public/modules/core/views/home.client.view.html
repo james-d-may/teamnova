@@ -12,6 +12,8 @@
     	<li ng-repeat="menu in menus" ng-class="menu.active" class="sidebaritem">
       		<a href="" ng-click="showmenu($index)">{{menu.name}}</a>
       	</li>
+
+      	<div class="sidebar-heading">Stats</div>
   	</ul>
 </div>
 </div>
@@ -49,7 +51,8 @@
 			  </a>
 			</span><br><br>
 
-			<span>Name: {{suboption.phonenumber}}</span>
+			Name: <span editable-text="option.text">{{option.text}}</span><br><br>
+
 
 			<span ng-show="option.action == 'redirect'">Phone Number: <span editable-text="option.phonenumber">{{option.phonenumber}}</span></span>
 
@@ -65,11 +68,13 @@
 				    {{ suboption.action }}</a></span><br><br>
 				  <span ng-show="suboption.action == 'redirect'">Phone Number: <span editable-text="suboption.phonenumber">{{suboption.phonenumber}}</span></span>
 
-					<span>Name: <span ng-controller="$index+1}}" editable-text="suboption.text">{{suboption.text}}</span></span>
-
 			    </div>
 
 		    </span>
+
+		    <br><br>
+
+		    <div class="glyphicon glyphicon-trash" ng-click="delete($index)"></div>
 
 		    </accordion-group>
 		    </accordion>
