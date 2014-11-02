@@ -9,6 +9,33 @@ var _ = require('lodash'),
 	passport = require('passport'),
 	User = mongoose.model('User');
 
+exports.getYo = function(req, res) {
+	console.log('yo from: ' + req.query.username);
+	User.findOne({yoname: req.query.username}, function(err, user) {
+		if (err || !user) {
+			return res.status(400);
+		}
+		user.isActive = !user.isActive;
+		user.save(function(err) {
+			if (err) {
+				return res.status(400);
+			}
+		});
+	});
+};
+
+exports.twilio = function(req, res) {
+	var num = req.query.number;
+	User.findOne({phonenumber: num}, function(err, user) {
+		if (err || !user) {
+			return res.send({error: true});
+		}
+		user.password = undefined;
+		user.salt = undefined;
+		res.send(user);
+	});
+};
+
 /**
  * Signup
  */

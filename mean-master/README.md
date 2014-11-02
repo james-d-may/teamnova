@@ -1,3 +1,6 @@
+PUSH HEROKU:
+git subtree push --prefix mean-master heroku master
+
 [![MEAN.JS Logo](http://meanjs.org/img/logo-small.png)](http://meanjs.org/)
 
 [![Build Status](https://travis-ci.org/meanjs/mean.svg?branch=master)](https://travis-ci.org/meanjs/mean)

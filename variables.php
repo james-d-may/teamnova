@@ -9,15 +9,35 @@
     // Company Email to send recording to
     $companyemail = $obj["username"];
 
+<<<<<<< HEAD
+=======
+    //No of top tier choices
+    $nochoices = if ($isActive)
+    {
+      sizeof($activeActivity);
+    } else {
+      sizeof($busyActivity);
+    }
+
+>>>>>>> 7b2a5b2a3f2fc6df55d589ccdede1f28ae2216c0
     $activeActivity = $obj["activeMenu"]["options"];
     $busyActivity = $obj["busyMenu"]["options"];
     $isActive = $obj["isActive"];
 
+<<<<<<< HEAD
     $nochoices = if ($isActive)
     {
       sizeof($activeActivity);
     } else {
       sizeof($busyActivity);
     } 
+=======
+    $currentActivity = if ($isActive)
+    {
+      $activeActivity;
+    } else {
+      $busyActivity;
+    }
+>>>>>>> 7b2a5b2a3f2fc6df55d589ccdede1f28ae2216c0
 
 ?>

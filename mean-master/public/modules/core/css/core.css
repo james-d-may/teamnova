@@ -250,10 +250,32 @@ h1 {
   }
 }
 
+.status {
+	padding-left: 40px;
+}
+
 .navbar {
 	background: #c0392b;
 	background-size: cover;
 	color: white;
+}
+
+.new, .save {
+	margin: 0 auto;
+	display: inline-block;
+	background: rgb(210,210,210);
+	width: auto;
+	margin-right: 30px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+}
+
+.new:hover, .save:hover {
+	background: #d32b33;
+		color: white;
+
 }
 
 .active {
@@ -263,8 +285,13 @@ h1 {
 	border-right: 1px solid rgb(200,200,200);
 }
 
-.meny-ttimwwo w{
-	
+.glyphicon-trash {
+	color: red;
+	cursor: pointer;
+}
+
+.glyphicon-trash:hover {
+	color: rgb(0,0,0);
 }
 
 .panel-heading {

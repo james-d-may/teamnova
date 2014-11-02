@@ -34,12 +34,12 @@ angular.module('core').controller('HomeController', ['$scope', '$location', 'Aut
 		}
 		$scope.menus = [$scope.user.activeMenu, $scope.user.busyMenu];
 
-		$scope.new2 = function() {
-			$scope.menus[0].options.push({text: 'New menu option', action: 'redirect', phonenumber: '07757672217'});
+		$scope.new = function(i) {
+			$scope.menus[i].options.push({text: 'New menu option', action: 'redirect', phonenumber: '07757672217'});
 		};
 
 		$scope.delete = function(i) {
-			$scope.menus[0].options.remove(i);
+			$scope.menus[$scope.menuitem].options.remove(i);
 			$scope.update();
 		};
 
