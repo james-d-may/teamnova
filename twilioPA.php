@@ -13,11 +13,11 @@
     $companyemail = "may.d.james@gmail.com";
 
     // Set words for choices
-    $choice1 = "Speak to Taimur.";
+    $choice1 = "Speak direct to Taimur.";
     $choice2 = "Just leave a message.";
     $choice3 = "Hear more about who we are";
-    $choice4 = "";
-    $choice5 = "";
+    $choice4 = "Speak to Taimur";
+    $choice5 = "Speak to our backend department";
     $choice6 = "";
     $choice7 = "";
     $choice8 = "";
@@ -32,7 +32,7 @@
 ?>
 <Response>
     <Say>Hello you've reached <?php echo $companyname ?>.</Say>
-    <Gather numDigits="1" action="test.php" method="POST">
+    <Gather numDigits="1" action="handleKey.php" method="POST">
         <?php $i = 0; ?>
 
         <?php while ($choices[$i] != NULL) { ?>
