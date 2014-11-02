@@ -33,7 +33,7 @@
 
 ?>
 <Response>
-    <Say>Hello you've reached <?php echo $companyname ?> <?php echo $callersnumber ?>.</Say>
+    <Say>Hello you've reached <?php echo $companyname ?>.</Say>
     <Gather numDigits="1" action="handleKey.php" method="POST">
         <?php $i = 0; ?>
 
