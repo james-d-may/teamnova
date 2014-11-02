@@ -4,15 +4,17 @@
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 
     include 'functions.php';
+    include 'variables.php';
     
 ?>
 
-<Response>
+<Response> 
+
     <?php if ($_REQUEST['Digits'] == '1') { ?>
 
         <!-- Query to see what form choice 1 is and collect associated varibales --> 
 
-        <?php redirect("07757672217") ?>
+        <?php redirect("07956996347") ?>
 
     <?php } elseif ($_REQUEST['Digits'] == '2') { ?>
 
