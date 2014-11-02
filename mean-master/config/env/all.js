@@ -16,7 +16,9 @@ module.exports = {
 			css: [
 				'public/lib/bootstrap/dist/css/bootstrap.css',
 				'public/lib/bootstrap/dist/css/bootstrap-theme.css',
-				'public/lib/angular-xeditable/dist/css/xeditable.css'
+				'public/lib/angular-xeditable/dist/css/xeditable.css',
+				'public/lib/angular-toggle-switch/angular-toggle-switch.css',
+				'public/lib/angular-toggle-switch/angular-toggle-switch-bootstrap.css'
 			],
 			js: [
 				'public/lib/angular/angular.js',
@@ -26,7 +28,8 @@ module.exports = {
 				'public/lib/angular-ui-utils/ui-utils.js',
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
 				'public/lib/angular-xeditable/dist/js/xeditable.js',
-				'public/lib/jquery/dist/jquery.js'
+				'public/lib/jquery/dist/jquery.js',
+				'public/lib/angular-toggle-switch/angular-toggle-switch.js'
 			]
 		},
 		css: [
