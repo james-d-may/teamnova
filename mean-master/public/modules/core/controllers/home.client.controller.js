@@ -1,20 +1,32 @@
 'use strict';
 
 
-angular.module('core').controller('HomeController', ['$scope', '$location', 'Authentication', 'Phonemenus',
-	function($scope, $location, Authentication, Phonemenus) {
+angular.module('core').controller('HomeController', ['$scope', '$location', 'Authentication', 'Users',
+	function($scope, $location, Authentication, Users) {
 		// This provides Authentication context.
 		$scope.authentication = Authentication;
 
-		if (!$scope.authentication.user) {
+		$scope.user = Authentication.user;
+
+		if (!$scope.user) {
 			$location.path('/landing');
 		}
 
 		$scope.menuitem = 0;
-		$scope.menus = Phonemenus.query();
+		$scope.menus = [$scope.user.activeMenu, $scope.user.busyMenu];
 
 		$scope.update = function() {
-			alert('ghhdsghj');
+			$scope.user.activeMenu = $scope.menus[0];
+			$scope.user.busyMenu = $scope.menus[1];
+			var user = new Users($scope.user);
+	
+			user.$update(function(response) {
+				$scope.success = true;
+				Authentication.user = response;
+			}, function(response) {
+				$scope.error = response.data.message;
+			});
+
 		};
 		$scope.alertMe = function() {
 		    setTimeout(function() {
