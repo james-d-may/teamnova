@@ -6,10 +6,6 @@
     // include 'variables.php';
 
 
-    $text = "hello, world";
-    $number = "123";
-
-
     // // if the caller pressed anything but 1 send them back
     // if($_REQUEST['Digits'] != '1'and $_REQUEST['Digits'] != '2' and $_REQUEST['Digits'] != '3' and $_REQUEST['Digits'] != '4') {
     //     header("Location: twilioPA.php");
@@ -21,12 +17,12 @@
     // Functions for different actions
     // Text Function
     function text($message) {
-        echo '<Say>$message</Say>';
+        echo "<Say >$message</Say>";
     }
 
     // Redirect Function
     function redirect($phonenumber) {
-        echo '<Dial> $phonenumber </Dial>';
+        echo "<Dial> $phonenumber </Dial>";
         echo '<Say> Sorry we failed to connect you. </Say>';
     }
 
@@ -37,21 +33,91 @@
     }
 
     // If available or busy sub menu Function
-    function ifaorb($available,$formatA,$formatB,$phonenumber,$message) {
+    function ifaorb($available,$formatA,$formatB,$pnumber,$message) {
         if ($available) {
 
-  
-                echo "Sorry to connect you.";
+            switch ($formatA) {
+            case "redirect":
+            redirect($pnumber);
+            break;
+            case "voicemail":
+            echo '<Say> Sorry they cant take your call at present. Alternatively.</Say>';
+            voicemail();
+            break;
+            case "text":
+            text($message);
+            break;
+            default:
+            echo "Sorry we failed to connect you.";
+            }
 
         } else {
 
-                echo "Sorry we failed to connect you.";
+            switch ($formatB) {
+            case "redirect":
+            redirect($pnumber);
+            break;
+            case "voicemail":
+            echo '<Say> Sorry they cant take your call at present. Alternatively.</Say>';
+            voicemail();
+            break;
+            case "text":
+            text($message);
+            break;
+            default:
+            echo "Sorry we failed to connect you.";
+            }
         }
+
+    }
+
+    function subMenu($choiceA,$choiceB,$choiceC,$choiceD) {
+
+        // Create subchoice array
+        $subchoices = array($choiceA, $choiceB, $choiceC, $choiceD);
+
+        print_r($subchoices);
+
+        echo '<Gather numDigits="1" action="handleSubKey.php" method="POST">';
+
+        $j = 0;
+
+        while ($subchoices[$j] != NULL) {
+            echo "<Say>Press ($j+1) to $subchoices[$j].</Say>";
+        $j++;}
+
+        echo '</Gather>';
 
     }
     
 
 ?>
 
-<p> <?php ifaorb(FALSE,"redirect","text",$number,$text) ?> </p>
+<Response>
+    <?php if ($_REQUEST['Digits'] == '1') { ?>
+
+        <!-- Query to see what form choice 1 is and collect associated varibales --> 
+
+        <?php text("hello1") ?>
+
+    <?php } elseif ($_REQUEST['Digits'] == '2') { ?>
+
+        <!-- Query to see what form choice 2 is and collect associated varibales -->
+
+        <?php voicemail() ?>
+
+    <?php } elseif ($_REQUEST['Digits'] == '3') {?>
+
+        <!-- Query to see what form choice 3 is and collect associated varibales -->
+
+        <?php redirect("07757672217") ?>
+
+    <?php } elseif ($_REQUEST['Digits'] == '4') { ?>
+
+        <!-- Query to see what form choice 4 is and collect associated varibales -->
+
+        <?php text("hello4") ?>
+
+    <?php } ?>
+</Response>
 
