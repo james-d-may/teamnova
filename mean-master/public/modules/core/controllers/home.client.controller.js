@@ -1,8 +1,8 @@
 'use strict';
 
 
-angular.module('core').controller('HomeController', ['$scope', '$location', 'Authentication',
-	function($scope, $location, Authentication) {
+angular.module('core').controller('HomeController', ['$scope', '$location', 'Authentication', 'Phonemenus',
+	function($scope, $location, Authentication, Phonemenus) {
 		// This provides Authentication context.
 		$scope.authentication = Authentication;
 
@@ -10,69 +10,76 @@ angular.module('core').controller('HomeController', ['$scope', '$location', 'Aut
 			$location.path('/landing');
 		}
 
-			$scope.menuitem = 0;
-	  $scope.menus = [{
-		name: 'Customers',
-		created: '637263872163',
-		user: {
-			displayName: 'Taimur',
-			phonenumber: 'hjdhsjkdahjks'
-		},
-		options: [
-			{
-				text: 'Press one to talk to Tetris department.',
-				action: 'redirect',
-				phonenumber: '911'
-			},
-			{
-				text: 'Press two to talk to Nerd department.',
-				action: 'voicemail'
-			},{
-				text: 'Press three to talk to a specific person.',
-				action: 'submenu',
-				options: [
-					{
-						text: 'Press one to talk to Tetris department.',
-						action: 'redirect',
-						phonenumber: '911'
-					},
-					{
-						text: 'Press two to talk to Nerd department.',
-						action: 'voicemail'
-					}]
-			}
-		]
-	},{
-		name: 'Holiday',
-		created: '637263872163',
-		user: {
-			displayName: 'Taimur',
-			phonenumber: 'hjdhsjkdahjks'
-		},
-		options: [
-			{
-				text: 'Press one to call 911.',
-				action: 'redirect',
-				phonenumber: '911'
-			},
-			{
-				text: 'Press two to leave a voice message.',
-				action: 'voicemail'
-			}
-		]
-	}];
+		$scope.menuitem = 0;
+		$scope.menus = Phonemenus.query();
 
-	  $scope.alertMe = function() {
-	    setTimeout(function() {
-	      alert('You\'ve selected the alert tab!');
-	    });
-	  };
+		$scope.update = function() {
+			alert('ghhdsghj');
+		};
+		$scope.alertMe = function() {
+		    setTimeout(function() {
+		      alert('You\'ve selected the alert tab!');
+		    });
+		};
 
-	  $scope.showmenu = function(i){
-	  	$scope.menus[$scope.menuitem].active = undefined;
-	  	$scope.menuitem = i;
-	  	$scope.menus[$scope.menuitem].active = 'active';
-	  };
+		$scope.showmenu = function(i){
+		  	$scope.menus[$scope.menuitem].active = undefined;
+		  	$scope.menuitem = i;
+		  	$scope.menus[$scope.menuitem].active = 'active';
+		};
+
+
+		/*$scope.menuitem = 0;
+	    $scope.menus = [{
+			name: 'Customers',
+			created: '637263872163',
+			user: {
+				displayName: 'Taimur',
+				phonenumber: 'hjdhsjkdahjks'
+			},
+			options: [
+				{
+					text: 'Press one to talk to Tetris department.',
+					action: 'redirect',
+					phonenumber: '911'
+				},
+				{
+					text: 'Press two to talk to Nerd department.',
+					action: 'voicemail'
+				},{
+					text: 'Press three to talk to a specific person.',
+					action: 'submenu',
+					options: [
+						{
+							text: 'Press one to talk to Tetris department.',
+							action: 'redirect',
+							phonenumber: '911'
+						},
+						{
+							text: 'Press two to talk to Nerd department.',
+							action: 'voicemail'
+						}]
+				}
+			]
+		},{
+			name: 'Holiday',
+			created: '637263872163',
+			user: {
+				displayName: 'Taimur',
+				phonenumber: 'hjdhsjkdahjks'
+			},
+			options: [
+				{
+					text: 'Press one to call 911.',
+					action: 'redirect',
+					phonenumber: '911'
+				},
+				{
+					text: 'Press two to leave a voice message.',
+					action: 'voicemail'
+				}
+			]
+		}];*/
 
 	}
 

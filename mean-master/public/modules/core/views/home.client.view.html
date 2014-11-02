@@ -20,7 +20,7 @@
 
 <div class="col-md-6 col-md-offset-2">
 
-	<div ng-repeat="option in menu.options">
+	<div id="editables" ng-repeat="option in menu.options">
 
 			<accordion close-others="oneAtATime">
 			<accordion-group>
@@ -69,6 +69,8 @@
 		    </accordion-group>
 		    </accordion>
 	</div>
+
+	<button ng-click="update()">SAVE</button>
 
 </div>
 

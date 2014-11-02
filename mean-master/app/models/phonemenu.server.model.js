@@ -24,7 +24,7 @@ var PhonemenuSchema = new Schema({
 		type: Schema.ObjectId,
 		ref: 'User'
 	},
-	submenus: {}
+	options: {}
 });
 /*
 SAMPLE:
