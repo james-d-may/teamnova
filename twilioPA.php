@@ -7,6 +7,9 @@
     // $m = new MongoClient();
     // $db = $m -> selectDB("manchester");
 
+    // Store callers number
+    $callersnumber = $_REQUEST['From'];
+
     $companyname = "team nova";
 
     // Company Email to send recording to

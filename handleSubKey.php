@@ -1,15 +1,13 @@
 <?php
     
-    // header("content-type: text/xml");
+    header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 
-    include "handleKey.php";
+    include "functions.php";
 
  ?>
 
  <Response>
-
-<?php redirect("07429059825") ?>
  	
     <?php if ($_REQUEST['Digits'] == '1') { ?>
 
