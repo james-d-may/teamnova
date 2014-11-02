@@ -1,24 +1,23 @@
 <section class="container-fluid" data-ng-controller="HomeController">
 
-<br><br><br>
-
 <div class="container">
 <div id="sidebar-wrapper" class="sidebar-toggle">
+
 	<ul class="sidebar-nav">
+
+		<div class="sidebar-heading">Menus</div>
+
     	<li ng-repeat="menu in menus" ng-class="menu.active" class="sidebaritem">
       		<a href="" ng-click="showmenu($index)">{{menu.name}}</a>
       	</li>
   	</ul>
 </div>
 </div>
-
-<br>
-
 <div ng-repeat="menu in menus" ng-hide="$index != menuitem">
 
-<div class="row">
+<div class="row whiter">
 
-<div class="col-md-6 col-md-offset-2">
+<div class="col-md-7 col-md-offset-2">
 
 <h1>Customise Menu</h1><hr>
 
