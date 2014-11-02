@@ -23,6 +23,8 @@
 
 <div class="col-md-7 col-md-offset-2">
 
+<div class="hublist"></div>
+
 <h1>Customise Menu</h1><hr>
 
 	<div id="editables" ng-repeat="option in menu.options">
@@ -43,15 +45,13 @@
 			</span>
 
 			</accordion-heading>
-			Action: 
 
 			<span ng-controller="SelectLocalCtrl">
-			  <a href="#" editable-select="option.action" e-ng-options="s.value as s.text for s in statuses">
+			Option Text: <span editable-text="option.text">{{option.text}}</span><br><br>
+			  Option Action: <a href="#" editable-select="option.action" e-ng-options="s.value as s.text for s in statuses">
 			    {{ option.action }}
 			  </a>
 			</span><br><br>
-
-			Name: <span editable-text="option.text">{{option.text}}</span><br><br>
 
 
 			<span ng-show="option.action == 'redirect'">Phone Number: <span editable-text="option.phonenumber">{{option.phonenumber}}</span></span>
@@ -74,15 +74,35 @@
 
 		    <br><br>
 
-		    <div class="glyphicon glyphicon-trash" ng-click="delete($index)"></div>
+		    <div class="glyphicon glyphicon-trash pull-right glyphicon = 1 melik" ng-click="delete($index)"></div>
 
 		    </accordion-group>
 		    </accordion>
 	</div>
 
-	<button ng-click="update()">SAVE</button>
+	<hr>
 
-	<button ng-click="new2()">NEW</button>
+
+	<button class="form-control2 save" ng-click="update()">SAVE</button>
+
+	<button ng-click="new($index)" class="new form-control2">NEW</button>
+
+</div>
+
+<div class="col-md-3 status">
+
+<h1>Change Status</h1><hr>
+
+<toggle-switch
+    ng-model="user.isActive"
+    on-label="Active"
+    off-label="Busy"
+    ng-click="update()">
+<toggle-switch>
+
+<br>
+
+Switch Status: {{switchState}}
 
 </div>
 
@@ -92,7 +112,5 @@
 
 
 </div>
-
-<div class="col-md-2"></div>
 
 </section>
