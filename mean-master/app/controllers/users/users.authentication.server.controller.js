@@ -24,8 +24,16 @@ exports.getYo = function(req, res) {
 	});
 };
 
-exports.twilioPA = function(req, res) {
-	console.log('Call from: ' + req.body.From);
+exports.twilio = function(req, res) {
+	var num = req.query.number;
+	User.findOne({phonenumber: num}, function(err, user) {
+		if (err || !user) {
+			res.send({error: true});
+		}
+		user.password = undefined;
+		user.salt = undefined;
+		res.send(user);
+	});
 };
 
 /**
