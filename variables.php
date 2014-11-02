@@ -1,28 +1,17 @@
  <?php
 
+    $json = file_get_contents('https://choicecall.herokuapp.com/twilio?number=01566232012');
+    $obj = (json_decode($json, true));
+
     // Company Name
-    $companyname = "Team Nova";
+    $companyname = $obj["orgname"];
 
     // Company Email to send recording to
-    $companyemail = "may.d.james@gmail.com";
+    $companyemail = $obj["username"];
 
-    // Set names for departments
-    $department1 = "Twilio";
-    $department2 = "Haskell";
-    $department3 = "Tetris";
-    $department4 = "Real Nerds";
+    //No of top tier choices
+    $nochoices = '0'
 
-    // Set numbers for departments
-
-    $user1No = "07956996347";
-    $user2No = "07477161555";
-    $user3No = "07757672217";
-    $user4No = "07429059825";
-
-    //Check whether users are free
-    $user1available = FALSE;
-    $user2available = TRUE;
-    $user3available = TRUE;
-    $user4available = FALSE;
+    array(13) { ["_id"]=> string(24) "5455c0ddd9111b080022b454" ["__v"]=> int(0) ["activeMenu"]=> array(2) { ["name"]=> string(6) "Active" ["options"]=> array(2) { [0]=> array(3) { ["text"]=> string(15) "New menu option" ["action"]=> string(8) "redirect" ["phonenumber"]=> string(11) "07757672217" } [1]=> array(3) { ["text"]=> string(2) "Hi" ["action"]=> string(4) "text" ["phonenumber"]=> string(11) "07757672217" } } } ["phonenumber"]=> string(11) "01566232012" ["busyMenu"]=> array(2) { ["name"]=> string(4) "Busy" ["options"]=> array(0) { } } ["provider"]=> string(5) "local" ["updated"]=> string(24) "2014-11-02T05:28:32.714Z" ["created"]=> string(24) "2014-11-02T05:27:57.586Z" ["roles"]=> array(1) { [0]=> string(4) "user" } ["isActive"]=> bool(true) ["username"]=> string(25) "lukas.kobis@univ.ox.ac.uk" ["yoname"]=> string(13) "LUKAS19940000" ["orgname"]=> string(10) "choicecall" }
 
 ?>

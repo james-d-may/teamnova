@@ -3,12 +3,11 @@
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 
-    // Query database to get account info and top tier options
-    // $m = new MongoClient();
-    // $db = $m -> selectDB("manchester");
+    include 'varibles.php';
 
     // Store callers number
-    $callersnumber = $_REQUEST['From'];
+    $callersnumber = $_REQUEST['To'];
+
 
     $companyname = "team nova";
 
@@ -20,7 +19,7 @@
     $choice2 = "Just leave a message.";
     $choice3 = "Hear more about who we are";
     $choice4 = "Speak to Taimur";
-    $choice5 = "Speak to our backend department";
+    $choice5 = "";
     $choice6 = "";
     $choice7 = "";
     $choice8 = "";
@@ -34,7 +33,7 @@
 
 ?>
 <Response>
-    <Say>Hello you've reached <?php echo $companyname ?>.</Say>
+    <Say>Hello you've reached <?php echo $companyname ?> <?php echo $callersnumber ?>.</Say>
     <Gather numDigits="1" action="handleKey.php" method="POST">
         <?php $i = 0; ?>
 

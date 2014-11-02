@@ -1,5 +1,10 @@
 'use strict';
 
+Array.prototype.remove = function(from, to) {
+  var rest = this.slice((to || from) + 1 || this.length);
+  this.length = from < 0 ? this.length + from : from;
+  return this.push.apply(this, rest);
+};
 
 angular.module('core').controller('HomeController', ['$scope', '$location', 'Authentication', 'Users',
 	function($scope, $location, Authentication, Users) {
@@ -31,6 +36,11 @@ angular.module('core').controller('HomeController', ['$scope', '$location', 'Aut
 
 		$scope.new2 = function() {
 			$scope.menus[0].options.push({text: 'New menu option', action: 'redirect', phonenumber: '07757672217'});
+		};
+
+		$scope.delete = function(i) {
+			$scope.menus[0].options.remove(i);
+			$scope.update();
 		};
 
 		$scope.update = function() {
