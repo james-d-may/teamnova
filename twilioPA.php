@@ -1,30 +1,42 @@
 <?php
 
-	// Greet caller
     header("content-type: text/xml");
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 
-    include 'variables.php';
+    // Query database to get account info and top tier options
+    // $m = new MongoClient();
+    // $db = $m -> selectDB("manchester");
 
-// Ask which department the user is interested in
+    $companyname = "team nova";
 
-// Collect key input
+    // Company Email to send recording to
+    $companyemail = "may.d.james@gmail.com";
 
-// If department user is busy then:
-// Tell caller that user is busy and to leave a message
-// Collect message and convert into text
-// Email this text to user with associated info
+    // Set words for choices
+    $choice1 = "Speak to Taimur.";
+    $choice2 = "Just leave a message.";
+    $choice3 = "Hear more about who we are";
+    $choice4 = "";
+    $choice5 = "";
+    $choice6 = "";
+    $choice7 = "";
+    $choice8 = "";
+    $choice9 = "";
 
-// Else redirect to users number
+    // Create choice array
+    $choices = array($choice1, $choice2, $choice3, $choice4, $choice5, $choice6, $choice7, $choice8, $choice9);
+
+    // Collect key input
+    // Loop through choices to create menu
 
 ?>
 <Response>
     <Say>Hello you've reached <?php echo $companyname ?>.</Say>
     <Gather numDigits="1" action="handleKey.php" method="POST">
-        <Say>To speak with the <?php echo $department1 ?> department, press 1.  
-            Press 2 to speak witht the <?php echo $department2 ?> department.
-            Press 3 to speak with the <?php echo $department3 ?> department.
-            Press 4 to speak with the <?php echo $department4 ?> department.  
-            Press any other key to start over.</Say>
+        <?php $i = 0; ?>
+
+        <?php while ($choices[$i] != NULL) { ?>
+            <Say>Press <?php echo ($i+1) ?> to <?php echo $choices[$i] ?>.</Say>
+        <?php $i++;} ?> 
     </Gather>
 </Response>
